@@ -28,10 +28,8 @@ int main(int argc, char **argv) {
 
 	printf("Welcome Guy\r\n");
 	Sleep(10);
-	char begin = getch();
-	if(begin == 'r'){
-		printf("Playing Game\r\n");
-	}
+	printf("Press Enter to play game\r\n");
+	while(getch() != 0x0D);
 	map_init(&map,"map.txt");
 	Position pos = {pos.x = 4};
 	while(1){
@@ -69,7 +67,7 @@ int main(int argc, char **argv) {
 		default:
 			break;
 	}
-	printf("Press key to exit\r\n");
-	getch();
+	printf("Press Enter to exit\r\n");
+	while(getch() != 0x0D);
 	return 0;
 }
